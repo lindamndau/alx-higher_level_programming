@@ -1,7 +1,4 @@
-#!/usr/bin/pythong3
+#!/usr/bin/python3
 def no_c(my_string):
-    result = ""
-    for character in my_string:
-        if character != 'c' or character != 'C':
-            result += character
-    return result
+    new_string = my_string.translate({ord(character): None for character in 'cC'})
+    return new_string
