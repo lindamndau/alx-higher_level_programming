@@ -2,39 +2,46 @@
 class Rectangle:
     """Define class"""
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
+
+        @property
         def width(self):
             """ Get and retrieve method """
             return self.__width
-
+        
+        @width.setter
         def width(self, value):
-            if not isinstance(self, int):
+            """ setter method """
+            if not isinstance(value, int):
                 raise TypeError("width must be an integer")
-            if self.value < 0:
+            if value < 0:
                 raise ValueError("width must be >= 0")
-            self.__width = width
+            self.__width = value
 
+        @property
         def height(self):
+            """ Height Getter """
             return self.__height
-
+        
+        @height.setter
         def height(self, value):
-            if not isinstance(self, int):
+            """ setter method """
+            if not isinstance(value, int):
                 raise TypeError("height must be an integer")
-            if self.value < 0:
+            if value < 0:
                 raise ValueError("height must be an integer")
-            self.__height = height
+            self.__height = value
 
     def area(self):
-        total_area = self.__width * self.__height
-        return total_area
+        """ Total area of Rectangle """
+        return self.__width * self.__height
         
     def perimeter(self):
+        """ Total Rectangle perimeter """
         if self.__width or self.__height == 0:
-            perimeter = 0
+            return 0
         else:
-            per = 2 * (self.__width + self.__height)
-            return per
-self = Rectangle()
-self.area()
-self.perimeter()
+            return 2 * (self.__width + self.__height)
+Rectangle.area()
+Rectangle.perimeter()
