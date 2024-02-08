@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def lookup(obj):
     """ Define lookup class """
-    return dir(obj)
+    return [i for i in dir(obj)]
